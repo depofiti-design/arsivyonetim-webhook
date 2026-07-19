@@ -32,11 +32,12 @@ async function handleWebhook(request, env) {
       }));
     }
 
+    const channels = JSON.parse(env.JOIN_LINKS);
     await callTelegram(env.BOT_TOKEN, "sendMessage", {
       chat_id: chatId,
       text: WELCOME_TEXT,
       reply_markup: {
-        inline_keyboard: [[{ text: "🎬 Kanallara Katıl", url: env.JOIN_LINK }]],
+        inline_keyboard: channels.map((c) => [{ text: `🎬 ${c.title}`, url: c.url }]),
       },
     });
   }
