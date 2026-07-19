@@ -1,0 +1,7 @@
+name = "arsivyonetim-webhook"
+main = "src/index.js"
+compatibility_date = "2026-07-01"
+
+[[kv_namespaces]]
+binding = "SUBSCRIBERS"
+id = "90f2cd760fe74378b522ebb2b2c52413"
